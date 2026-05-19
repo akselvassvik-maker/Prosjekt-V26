@@ -1,38 +1,36 @@
 
 
-// --- LES MER 
-function lesMer(id, knapp) {
-    const ekstraTekst = document.getElementById(id);
+// ================= JAVASCRIPT =================
 
-    if (ekstraTekst.style.display === "block") {
-        // Teksten er synlig → skjul den
-        ekstraTekst.style.display = "none";
-        knapp.textContent = "Les mer ↓";
-    } else {
-        // Teksten er skjult → vis den
-        ekstraTekst.style.display = "block";
-        knapp.textContent = "Les mindre ↑";
+
+// LES MER / LES MINDRE
+
+function lesMer(id, knapp) {
+
+    const tekstEl = document.getElementById(id);
+
+    if (tekstEl.style.display == "block") {
+
+        tekstEl.style.display = "none";
+        knapp.innerHTML = "Les mer ↓";
+
     }
+
+    else {
+
+        tekstEl.style.display = "block";
+        knapp.innerHTML = "Les mindre ↑";
+
+    }
+
 }
 
 
-// --- DARK MODE / LYS MODUS ---
-const darkKnapp = document.querySelector(".dark-mode-knapp");
+
+// DARK MODE
 
 function byttModus() {
+
     document.body.classList.toggle("lys-modus");
 
-    if (document.body.classList.contains("lys-modus")) {
-        darkKnapp.textContent = "🌙";
-    } else {
-        darkKnapp.textContent = "☀️";
-    }
 }
-
-
-// --- BURGER-MENY ---
-function toggleMeny() {
-    const meny = document.getElementById("navMeny");
-    meny.classList.toggle("aktiv");
-}
-

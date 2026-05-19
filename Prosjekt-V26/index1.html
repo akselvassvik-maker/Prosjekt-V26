@@ -1,0 +1,179 @@
+<!-- ================= HTML ================= -->
+
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norge til VM 2026</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGASJON -->
+    <nav>
+
+        <h1 class="logo">🇳🇴 Norge VM 2026</h1>
+
+        <ul id="meny">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="spillere.html">Spillere</a></li>
+            <li><a href="kamper.html">Kamper</a></li>
+        </ul>
+
+        <button onclick="byttModus()" class="modus-knapp">
+            🌙
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero">
+
+        <div class="hero-tekst">
+            <h2>Norge er klare for VM 2026!</h2>
+            
+        </div>
+
+    </header>
+
+
+    <!-- STATISTIKK -->
+    <section class="statistikk">
+
+        <div class="stat-boks">
+            <h3>28</h3>
+            <p>År siden sist</p>
+        </div>
+
+        <div class="stat-boks">
+            <h3>32</h3>
+            <p>Mål scoret</p>
+        </div>
+
+        <div class="stat-boks">
+            <h3>48</h3>
+            <p>Lag i VM</p>
+        </div>
+
+    </section>
+
+
+    <!-- NYHETER -->
+    <section class="nyheter">
+
+        <h2>Siste nytt</h2>
+
+        <div class="nyhet">
+
+            <img src="./media/image.png" alt="Haaland">
+
+            <h3>Norge sikret VM-plass</h3>
+
+            <p>
+                Norge vant 3-0 mot Tyrkia.
+            </p>
+
+            <p id="tekst1" class="ekstra-tekst">
+                Haaland scoret to mål og hele Norge jublet.
+            </p>
+
+            <button onclick="lesMer('tekst1', this)">
+                Les mer ↓
+            </button>
+
+        </div>
+
+
+        <div class="nyhet">
+
+            <img src="./media/595366055_1413198120808653_8185533187668480141_n.jpg copy.webp"
+                alt="Norge gruppe">
+
+            <h3>Norge møter Frankrike</h3>
+
+            <p>
+                Norge havnet i en vanskelig gruppe.
+            </p>
+
+            <p id="tekst2" class="ekstra-tekst">
+                Treneren mener laget er klare for utfordringen.
+            </p>
+
+            <button onclick="lesMer('tekst2', this)">
+                Les mer ↓
+            </button>
+
+        </div>
+
+
+        <div class="nyhet">
+
+            <img src="media/BB241117ZU012 copy.jpg" alt="Haaland">
+
+            <h3>Haaland i storform</h3>
+
+            <p>
+                Haaland er Norges største håp i VM.
+            </p>
+
+            <p id="tekst3" class="ekstra-tekst">
+                Han scoret 15 mål i kvalifiseringen.
+            </p>
+
+            <button onclick="lesMer('tekst3', this)">
+                Les mer ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPILLERE -->
+    <section class="spillere">
+
+        <h2>Spillere</h2>
+
+        <div class="spiller-grid">
+
+            <div class="spiller">
+                <img src="media/239085 copy.png" alt="">
+                <h3>Erling Haaland</h3>
+                <p>Spiss</p>
+            </div>
+
+            <div class="spiller">
+                <img src="media/odda.png" alt="">
+                <h3>Martin Ødegaard</h3>
+                <p>Midtbane</p>
+            </div>
+
+            <div class="spiller">
+                <img src="media/nyland.png" alt="">
+                <h3>Ørjan Nyland</h3>
+                <p>Keeper</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>IT1 prosjekt - Aksel Vassvik</p>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

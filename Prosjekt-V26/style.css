@@ -1,516 +1,300 @@
-
-    /* ===== CSS-VARIABLER (farger vi bruker overalt) ===== */
-    :root {
-      --rod:   #EF2B2D;
-      --hvit:  #FFFFFF;
-      --mork:  #0A0A0A;
-      --gra:   #1a1a1a;
-      --lysgra:#f0f0f0;
-    }
-
-    /* ===== GRUNNSTIL ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background-color: var(--mork);
-      color: var(--hvit);
-    }
-
-    /* ===== NAVIGASJON ===== */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: var(--mork);
-      border-bottom: 3px solid var(--rod);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      color: var(--rod);
-      letter-spacing: 2px;
-    }
-
-    .nav-lenker {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-lenker a {
-      color: var(--hvit);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-lenker a:hover {
-      color: var(--rod);
-    }
-
-    /* ===== BURGER-MENY (skjult på stor skjerm) ===== */
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-
-    .burger span {
-      display: block;
-      width: 28px;
-      height: 3px;
-      background-color: var(--hvit);
-      border-radius: 3px;
-      transition: background-color 0.2s;
-    }
-
-    .burger:hover span {
-      background-color: var(--rod);
-    }
-
-    /* ===== HERO-SEKSJON ===== */
-    .hero {
-      position: relative;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.35;
-    }
-
-    /* Placeholder hvis bildet mangler */
-    .hero-bg-farge {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #1a0000 0%, #2d0a0a 50%, #0a0a1a 100%);
-    }
-
-    .hero-innhold {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 0 20px;
-      animation: fadeOpp 1s ease forwards;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      background-color: var(--rod);
-      color: var(--hvit);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 2px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(60px, 12vw, 120px);
-      line-height: 0.95;
-      letter-spacing: 3px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--rod);
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #cccccc;
-      max-width: 500px;
-      margin: 0 auto 36px;
-      line-height: 1.6;
-    }
-
-    .hero-knapper {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .knapp-rod {
-      background-color: var(--rod);
-      color: var(--hvit);
-      padding: 14px 32px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.2s, transform 0.1s;
-    }
-
-    .knapp-rod:hover {
-      background-color: #c0181a;
-      transform: translateY(-2px);
-    }
-
-    .knapp-kant {
-      background-color: transparent;
-      color: var(--hvit);
-      padding: 14px 32px;
-      font-family: 'Barlow', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 2px solid var(--hvit);
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .knapp-kant:hover {
-      border-color: var(--rod);
-      color: var(--rod);
-    }
-
-    /* ===== STATISTIKK-STRIPE ===== */
-    .statistikk {
-      display: flex;
-      justify-content: space-around;
-      background-color: var(--rod);
-      padding: 30px 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .stat-element {
-      text-align: center;
-    }
-
-    .stat-tall {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 52px;
-      line-height: 1;
-      letter-spacing: 2px;
-    }
-
-    .stat-tekst {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.85;
-      margin-top: 4px;
-    }
-
-    /* ===== SEKSJONER (felles stiler) ===== */
-    .seksjon {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .seksjon-tittel {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    .seksjon-tittel span {
-      color: var(--rod);
-    }
-
-    .seksjon-linje {
-      width: 60px;
-      height: 4px;
-      background-color: var(--rod);
-      margin-bottom: 40px;
-    }
-
-    /* ===== NYHETER-GRID ===== */
-    .nyheter-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .nyhet-kort {
-      background-color: var(--gra);
-      border-radius: 6px;
-      overflow: hidden;
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-
-    .nyhet-kort:hover {
-      transform: translateY(-5px);
-    }
-
-    .nyhet-bilde {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      background-color: #2a2a2a;
-    }
-
-    .nyhet-innhold {
-      padding: 20px;
-    }
-
-    .nyhet-kategori {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--rod);
-      margin-bottom: 8px;
-    }
-
-    .nyhet-tittel {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      line-height: 1.1;
-    }
-
-    .nyhet-tekst {
-      font-size: 14px;
-      color: #aaaaaa;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    /* ===== LES MER / LES MINDRE ===== */
-    .ekstra-tekst {
-      display: none;
-      font-size: 14px;
-      color: #aaaaaa;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .les-mer-knapp {
-      background: none;
-      border: none;
-      color: var(--rod);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .les-mer-knapp:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== DARK MODE KNAPP ===== */
-    .dark-mode-knapp {
-      background: none;
-      border: 2px solid #444;
-      color: var(--hvit);
-      font-size: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: border-color 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dark-mode-knapp:hover {
-      border-color: var(--rod);
-    }
-
-    /* ===== LYS MODUS ===== */
-    body.lys-modus {
-      background-color: var(--lysgra);
-      color: var(--mork);
-    }
-
-    body.lys-modus nav {
-      background-color: var(--hvit);
-    }
-
-    body.lys-modus .logo {
-      color: var(--rod);
-    }
-
-    body.lys-modus .nav-lenker a {
-      color: var(--mork);
-    }
-
-    body.lys-modus .nyhet-kort {
-      background-color: var(--hvit);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    body.lys-modus .dark-mode-knapp {
-      color: var(--mork);
-    }
-
-    /* ===== SPILLER-KORT ===== */
-    .spillere-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .spiller-kort {
-      background-color: var(--gra);
-      border-radius: 6px;
-      padding: 24px 16px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .spiller-kort:hover {
-      transform: translateY(-4px);
-    }
-
-    body.lys-modus .spiller-kort {
-      background-color: var(--hvit);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .spiller-bilde {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      background-color: #333;
-      margin: 0 auto 14px;
-      display: block;
-      border: 3px solid var(--rod);
-    }
-
-    .spiller-nummer {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      color: var(--rod);
-      line-height: 1;
-    }
-
-    .spiller-navn {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
-      letter-spacing: 1px;
-      margin: 6px 0 4px;
-    }
-
-    .spiller-posisjon {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #888;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: var(--gra);
-      border-top: 3px solid var(--rod);
-      text-align: center;
-      padding: 40px 20px;
-      color: #888;
-      font-size: 14px;
-    }
-
-    footer .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 32px;
-      color: var(--rod);
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    /* ===== ANIMASJON ===== */
-    @keyframes fadeOpp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ===== RESPONSIVT DESIGN (mobil) ===== */
-    @media (max-width: 768px) {
-      nav {
-        padding: 16px 20px;
-      }
-
-      .nav-lenker {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: var(--mork);
-        padding: 20px;
-        border-bottom: 3px solid var(--rod);
-        gap: 16px;
-      }
-
-      .nav-lenker.aktiv {
-        display: flex;
-      }
-
-      .burger {
-        display: flex;
-      }
-
-      .nyheter-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .spillere-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .statistikk {
-        padding: 24px 20px;
-      }
-
-      .seksjon {
-        padding: 60px 20px;
-      }
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+
+/* NAVIGASJON */
+
+nav {
+    background-color: #000;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.logo {
+    color: red;
+    font-size: 28px;
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: white;
+    
+    font-size: 20px;
+}
+
+a:hover {
+    color: red;
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+.modus-knapp {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/* HERO */
+
+.hero {
+    display: flex;
+    text-align: center;
+    padding: 120px 20px;
+    background-image: url(media/vm.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+}
+
+.hero-tekst {
+    max-width: 1800px;
+   margin: 0 auto;
   
+}
+
+.hero h2 {
+    font-size: 100px;
+    margin-bottom: 40px;
+    color: red;
+}
+
+.hero p {
+    font-size: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: red;
+}
+
+
+/* STATISTIKK */
+
+.statistikk {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+
+    background-color: red;
+    padding: 40px 20px;
+}
+
+.stat-boks {
+    text-align: center;
+}
+
+.stat-boks h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* NYHETER */
+
+.nyheter {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.nyheter h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.nyhet {
+    background-color: #222;
+
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.nyhet img {
+    width: 100%;
+    max-width: 500px;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.nyhet h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.nyhet p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.ekstra-tekst {
+    display: none;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    cursor: pointer;
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: red;
+    color: white;
+
+    font-size: 16px;
+}
+
+
+/* SPILLERE */
+
+.spillere {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.spillere h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.spiller-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.spiller {
+    background-color: #222;
+
+    width: 250px;
+
+    padding: 30px;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.spiller img {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    margin-bottom: 20px;
+}
+
+.spiller h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.spiller p {
+    font-size: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    padding: 30px;
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+
+/* ================= LYS MODUS ================= */
+
+.lys-modus {
+    background-color: white;
+    color: black;
+}
+
+
+/* NAV */
+
+.lys-modus nav {
+    background-color: #dddddd;
+}
+
+.lys-modus a {
+    color: black;
+}
+
+.lys-modus .logo {
+    color: red;
+}
+
+
+/* HERO */
+
+.lys-modus .hero {
+    background-color: #eeeeee;
+}
+
+.lys-modus .hero p {
+    color: black;
+}
+
+
+/* NYHETER */
+
+.lys-modus .nyhet {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.lys-modus .nyhet p {
+    color: black;
+}
+
+.lys-modus .nyhet h3 {
+    color: black;
+}
+
+
+/* SPILLERE */
+
+.lys-modus .spiller {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.lys-modus .spiller p {
+    color: black;
+}
+
+.lys-modus .spiller h3 {
+    color: black;
+}
+
+
+/* FOOTER */
+
+.lys-modus footer {
+    background-color: #dddddd;
+    color: black;
+}
