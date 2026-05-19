@@ -53,7 +53,6 @@ a:hover {
 /* HERO */
 
 .hero {
-    display: flex;
     text-align: center;
     padding: 120px 20px;
     background-image: url(media/vm.png);
@@ -70,15 +69,6 @@ a:hover {
 
 .hero h2 {
     font-size: 100px;
-    margin-bottom: 40px;
-    color: red;
-}
-
-.hero p {
-    font-size: 50px;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
     color: red;
 }
 
@@ -88,7 +78,8 @@ a:hover {
 .statistikk {
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 220px;
+
 
     background-color: red;
     padding: 40px 20px;
@@ -141,12 +132,13 @@ a:hover {
 
 .nyhet p {
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.5;
+    color: grey;
 }
 
 .ekstra-tekst {
     display: none;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 button {
@@ -175,6 +167,7 @@ button {
 .spillere h2 {
     font-size: 40px;
     margin-bottom: 50px;
+    text-decoration: underline;
 }
 
 .spiller-grid {
@@ -212,6 +205,7 @@ button {
 
 .spiller p {
     font-size: 18px;
+    color: red;
 }
 
 
