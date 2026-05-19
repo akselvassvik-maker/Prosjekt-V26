@@ -1,10 +1,3 @@
-
-
-// ================= JAVASCRIPT =================
-
-
-// LES MER / LES MINDRE
-
 function lesMer(id, knapp) {
 
     const tekstEl = document.getElementById(id);
@@ -25,9 +18,6 @@ function lesMer(id, knapp) {
 
 }
 
-
-
-// DARK MODE
 
 function byttModus() {
 

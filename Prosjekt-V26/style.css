@@ -33,7 +33,7 @@ ul {
 
 a {
     color: white;
-    
+
     font-size: 20px;
 }
 
@@ -59,13 +59,13 @@ a:hover {
     background-image: url(media/vm.png);
     background-size: cover;
     background-position: center;
-    min-height: 80vh;
+    min-height: 60vh;
+
 }
 
 .hero-tekst {
     max-width: 1800px;
-   margin: 0 auto;
-  
+
 }
 
 .hero h2 {
