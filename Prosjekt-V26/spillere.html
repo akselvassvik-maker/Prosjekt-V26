@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-        
+
 
         img {
             display: block;
@@ -21,7 +21,8 @@
 
         /* nav */
         nav {
-            background-color: #000;
+            background-color: black;
+            min-height: 110px;
 
             padding: 20px 40px;
 
@@ -74,7 +75,7 @@
             background-image: url(media/stjernehimmel.png);
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100vh;
 
             display: flex;
             justify-content: center;
@@ -169,9 +170,46 @@
             padding: 30px;
             text-align: center;
 
-            
+
             color: grey;
             letter-spacing: 2px;
+        }
+
+
+
+        /* MOBIL */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .spillere {
+                padding: 60px 10px;
+            }
+
+            .spillere h2 {
+                font-size: 35px;
+            }
+
+            .spiller-grid {
+                gap: 20px;
+            }
+
+            .spiller-kort {
+                width: 220px;
+                padding: 20px;
+            }
+
         }
     </style>
 </head>

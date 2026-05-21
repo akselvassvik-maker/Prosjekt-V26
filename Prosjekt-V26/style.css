@@ -6,6 +6,9 @@ body {
 }
 
 
+
+
+
 /* NAVIGASJON */
 
 nav {
@@ -297,4 +300,64 @@ footer {
 .lys-modus footer {
     background-color: #dddddd;
     color: black;
+}
+
+
+
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        min-height: 40vh;
+    }
+
+    .hero h2 {
+        font-size: 50px;
+    }
+
+    .statistikk {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nyheter {
+        padding: 60px 10px;
+    }
+
+    .nyhet {
+        padding: 20px;
+    }
+
+    .nyhet h3 {
+        font-size: 24px;
+    }
+
+    .nyhet p {
+        font-size: 16px;
+    }
+
+    .spiller-grid {
+        gap: 20px;
+    }
+
+    .spiller {
+        width: 220px;
+        padding: 20px;
+    }
+
 }
