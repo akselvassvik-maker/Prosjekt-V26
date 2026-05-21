@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamper | Norge VM 2026</title>
+
+    <link rel="stylesheet" href="kamper.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+
+
+        /* NAVIGASJON */
+
+        nav {
+            background-color: black;
+            padding: 20px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: red;
+            font-size: 28px;
+        }
+
+        ul {
+            display: flex;
+            gap: 50px;
+
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        .modus-knapp {
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+
+            background-image: url(media/vm.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-tekst{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h2 {
+            font-size: 80px;
+            color: red;
+        }
+
+        .hero p {
+            font-size: 22px;
+            font-weight: bold;
+            background-color: black;
+            max-width: fit-content;
+        }
+
+
+        /* KAMPER */
+
+        .kamper {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .kamp-kort {
+            background-color: #222222;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .kamp-kort:hover {
+            transform: scale(1.03);
+        }
+
+        .kamp-kort h3 {
+            font-size: 30px;
+            color: red;
+
+            margin-bottom: 20px;
+        }
+
+        .kamp-kort p {
+            font-size: 18px;
+            color: grey;
+
+            margin: 10px 0;
+        }
+
+
+        /* TABELL */
+
+        .tabell-section {
+            padding: 60px 20px;
+
+            text-align: center;
+        }
+
+        .tabell-section h2 {
+            font-size: 40px;
+
+            margin-bottom: 40px;
+        }
+
+        table {
+            margin: auto;
+
+            border-collapse: collapse;
+
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 2px solid red;
+
+            padding: 15px;
+
+            font-size: 18px;
+        }
+
+        th {
+            background-color: red;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: black;
+            padding: 30px;
+
+            text-align: center;
+
+            margin-top: 50px;
+        }
+
+
+        /* LYS MODUS */
+
+        .lys-modus {
+            background-color: white;
+            color: black;
+        }
+
+        .lys-modus nav {
+            background-color: #dddddd;
+        }
+
+        .lys-modus a {
+            color: black;
+        }
+
+        .lys-modus .hero p {
+            color: rgb(254, 253, 253);
+        }
+
+        .lys-modus .kamp-kort {
+            background-color: white;
+        }
+
+        .lys-modus .kamp-kort p {
+            color: black;
+        }
+
+        .lys-modus table {
+            background-color: white;
+            color: black;
+        }
+
+        .lys-modus footer {
+            background-color: #dddddd;
+            color: black;
+        }
+
+
+        /* MOBIL */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 20px;
+
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            ul {
+                gap: 20px;
+
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h2 {
+                font-size: 50px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .kamp-kort {
+                padding: 20px;
+            }
+
+            .kamp-kort h3 {
+                font-size: 24px;
+            }
+
+            .kamp-kort p {
+                font-size: 16px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASJON -->
+
+    <nav>
+
+        <h1 class="logo">🇳🇴 Norge VM 2026</h1>
+
+        <ul id="meny">
+            <li><a href="index1.html">Hjem</a></li>
+            <li><a href="spillere.html">Spillere</a></li>
+            <li><a href="kampprogram.html">Kamper</a></li>
+        </ul>
+
+        <button onclick="byttModus()" class="modus-knapp">
+            🌙
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-tekst">
+
+            <h2>Norges Kampprogram</h2>
+
+            <p>
+                Her ser du Norges kamper i VM 2026.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- KAMPER -->
+
+    <section class="kamper">
+
+        <div class="kamp-kort">
+
+            <h3>🇮🇶 Irak vs 🇳🇴 Norge</h3>
+
+            <p>16. juni 2026</p>
+
+            <p>Foxborough Stadium</p>
+
+            <p>Kl. 18:00</p>
+
+        </div>
+
+
+        <div class="kamp-kort">
+
+            <h3>🇳🇴 Norge vs 🇸🇳 Senegal</h3>
+
+            <p>22. juni 2026</p>
+
+            <p>New York Stadium</p>
+
+            <p>Kl. 20:00</p>
+
+        </div>
+
+
+        <div class="kamp-kort">
+
+            <h3>🇳🇴 Norge vs 🇫🇷 Frankrike</h3>
+
+            <p>26. juni 2026</p>
+
+            <p>Foxborough Stadium</p>
+
+            <p>Kl. 15:00</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TABELL -->
+
+    <section class="tabell-section">
+
+        <h2>Gruppetabell</h2>
+
+        <table>
+
+            <tr>
+                <th>Lag</th>
+                <th>Poeng</th>
+            </tr>
+
+            <tr>
+                <td>Norge</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Frankrike</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Senegal</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Irak</td>
+                <td>0</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>IT1 prosjekt - Aksel Vassvik</p>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
